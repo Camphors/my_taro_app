@@ -1,11 +1,47 @@
-.mine-page{
-  .iconfont{
+@bkColor: #2e2e2e;
+@grayColor: #a0a0a0;
+@whColor: #fff;
+.mine-page {
+  padding: 20px;
+  background-color: #f1f1f1;
+  .iconfont {
     font-size: 30rpx;
   }
+  .profileInfo {
+    .tag {
+      font-size: 20px;
+      color: @grayColor;
+      line-height: 1.5;
+      .num{
+        color: @bkColor
+      }
+    }
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .divider {
+      float: left;
+      width: 1px;
+      height: 10px;
+      background-color: @grayColor;
+    }
+  }
 
-  .profileInfo{
-    .avatar{
-      
+  .recommend {
+    margin-top: 20px;
+    height: 212px;
+    background-color: @whColor;
+    border-radius: 10px;
+    .recom-item{
+      width: 50%;
+      height: 50%;
+      float: left;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

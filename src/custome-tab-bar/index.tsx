@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View } from '@tarojs/components';
-import { AtTabBar } from 'taro-ui';
 import Taro from '@tarojs/taro';
 import 'taro-ui/dist/style/components/icon.scss';
 import 'taro-ui/dist/style/components/tab-bar.scss';
@@ -9,7 +8,7 @@ import './index.less';
 
 import 'taro-ui/dist/style/components/button.scss'; // 按需引入
 
-const Index = () => {
+const customTabBar = () => {
   const [currentTab, setCurrentTab] = useState(0);
   const threads = [
     {
@@ -139,4 +138,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default customTabBar;
