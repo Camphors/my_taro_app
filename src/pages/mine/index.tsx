@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from '@tarojs/components';
 import { AtAvatar, AtIcon } from 'taro-ui';
 import 'taro-ui/dist/style/components/icon.scss';
-import "taro-ui/dist/style/components/flex.scss";
+import 'taro-ui/dist/style/components/flex.scss';
 import './index.less';
 
 const Mine = () => {

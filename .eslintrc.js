@@ -7,11 +7,12 @@ module.exports = {
     node: true
   },
   extends: [
+    // 'airbnb',
     'eslint:recommended',
     // 'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:@react-native-community'
+    'plugin:prettier/recommended'
+    // 'plugin:taro/react'
   ],
   parserOptions: {
     parser: 'babel-eslint', //词法解析器使用babel-eslint，以更好的适配es6的新api
@@ -26,6 +27,5 @@ module.exports = {
     'react/prop-types': OFF,
     'react/no-find-dom-node': OFF,
     'react/display-name': OFF
-    // quotes: [1, 'single']
   }
 };
