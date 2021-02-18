@@ -68,7 +68,7 @@ const Mine = () => {
       <View className="at-row profileInfo">
         <View className="at-col at-col-3 avatar">
           <AtAvatar
-            image={require('../../assets/images/avatar.png')}
+            image={'../../assets/images/avatar.png'}
             size="large"
             circle
           ></AtAvatar>

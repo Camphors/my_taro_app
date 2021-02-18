@@ -1,17 +1,22 @@
 import React from 'react';
 import { View, Text } from '@tarojs/components';
-import { AtAvatar } from 'taro-ui';
+import { AtAvatar, AtIcon, AtInput } from 'taro-ui';
 // import 'taro-ui/dist/style/components/avatar.scss';
+import "taro-ui/dist/style/components/icon.scss"
 import './index.less';
 
 const Message = () => {
+
+  const changeSeach = () => {
+
+  }
   const messageList = [
     {
       avatar: '',
       name: '消息号助手',
       message: '雅诗兰黛：凝聚时光的力量，或称想要的样子',
       time: '星期日',
-      count: 0,
+      count: 2,
       isSilence: true
     },
     {
@@ -74,22 +79,28 @@ const Message = () => {
   return (
     <View className="message">
       {/* <AtAvatar circle image='https://jdc.jd.com/img/200'></AtAvatar> */}
-
+      <View className="search">
+        <AtInput name="search" clear type="text" placeholder="搜索" onChange={() => changeSeach}/>
+        <AtIcon value="search" size="14"></AtIcon>
+      </View>
       {messageList.map((item, index) => {
         return (
           <View className="msg-item" key={index}>
-            {/* <AtAvatar
-                image={require('../../assets/images/avatar.png')}
-              ></AtAvatar> */}
-            <View className="avatar"></View>
+            <View className="avatar">
+              <AtAvatar
+                image={'../../assets/images/avatar.png'}
+                circle
+              ></AtAvatar>
+            </View>
             <View className="content">
               <View className="name">{item.name}</View>
               <View className="msg">{item.message}</View>
             </View>
             <View className="tail">
-              <View>{item.time}</View>
+              <View className="time">{item.time}</View>
               <View>
-                {item.isSilence ? <Text className="iconfont icon-bell-off-full"></Text> : null}
+                {item.isSilence ? item.count > 0 ?  <Text className="bell"><Text className="iconfont icon-bell-off-full"></Text><Text className="dot"></Text></Text> : <Text className="iconfont icon-bell-off-full"></Text> : null}
+                {!item.isSilence && item.count > 0 ? <Text className="dot count">{item.count}</Text> : null}
               </View>
             </View>
           </View>

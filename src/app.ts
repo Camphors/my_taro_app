@@ -2,7 +2,15 @@ import { Component } from 'react';
 import './assets/iconfont/iconfont.css';
 import './app.less';
 class App extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    // wx.getSystemInfo({
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // })
+    // const res = wx.getSystemInfoSync()
+    // console.log(res)
+  }
 
   componentDidShow() {}
 
