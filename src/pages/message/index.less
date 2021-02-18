@@ -1,0 +1,50 @@
+@bkColor: #2e2e2e;
+@grayColor: #a0a0a0;
+@whColor: #fff;
+@ogColor:#f87b35;
+.message{
+  .msg-item{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f4f4f4;
+    .avatar{
+      flex: 2;
+    }
+    .content{
+      flex: 8;
+      align-items: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      .name{
+        font-size: 30px;
+        color: @bkColor;
+        padding-bottom: 10px;
+      }
+      .msg{
+        font-size: 24px;
+        color: @grayColor;
+      }
+    }
+    .tail{
+      flex: 2;
+      font-size: 18px;
+      color: @grayColor;
+      view:nth-child(2n) {
+        padding-top: 25px
+      }
+      .count{
+        width: 20px;
+        min-width: 20px;
+        max-width: 30px;
+        height: 20px;
+        color: #fff;
+        border-radius: 50%;
+        border:1px solid @ogColor;
+        background-color: @ogColor;
+      }
+    }
+  }
+}
