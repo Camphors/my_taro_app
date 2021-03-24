@@ -3,11 +3,14 @@ import './assets/iconfont/iconfont.css';
 import './app.less';
 class App extends Component {
   componentDidMount() {
-    // wx.getSystemInfo({
-    //   success(res) {
-    //     console.log(res)
-    //   }
-    // })
+    wx.getSystemInfo({
+      success(res) {
+        console.log(res)
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
     // const res = wx.getSystemInfoSync()
     // console.log(res)
   }

@@ -1,15 +1,21 @@
 import React from 'react';
 import { View, Text } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import { AtAvatar, AtIcon, AtInput } from 'taro-ui';
 // import 'taro-ui/dist/style/components/avatar.scss';
-import "taro-ui/dist/style/components/icon.scss"
+import 'taro-ui/dist/style/components/icon.scss';
 import './index.less';
 
 const Message = () => {
+  // 消息查询
+  const changeSeach = () => {};
 
-  const changeSeach = () => {
-
-  }
+  // 显示消息详情
+  const showDetails = name => {
+    Taro.redirectTo({
+      url: 'details?name=' + name
+    });
+  };
   const messageList = [
     {
       avatar: '',
@@ -76,21 +82,19 @@ const Message = () => {
       isSilence: false
     }
   ];
+
   return (
     <View className="message">
       {/* <AtAvatar circle image='https://jdc.jd.com/img/200'></AtAvatar> */}
       <View className="search">
-        <AtInput name="search" clear type="text" placeholder="搜索" onChange={() => changeSeach}/>
+        <AtInput name="search" clear type="text" placeholder="搜索" onChange={() => changeSeach} />
         <AtIcon value="search" size="14"></AtIcon>
       </View>
       {messageList.map((item, index) => {
         return (
-          <View className="msg-item" key={index}>
+          <View className="msg-item" key={index} onClick={() => showDetails(item.name)}>
             <View className="avatar">
-              <AtAvatar
-                image={'../../assets/images/avatar.png'}
-                circle
-              ></AtAvatar>
+              {/* <AtAvatar image={'../../assets/images/avatar.png'} circle></AtAvatar> */}
             </View>
             <View className="content">
               <View className="name">{item.name}</View>
@@ -99,8 +103,19 @@ const Message = () => {
             <View className="tail">
               <View className="time">{item.time}</View>
               <View>
-                {item.isSilence ? item.count > 0 ?  <Text className="bell"><Text className="iconfont icon-bell-off-full"></Text><Text className="dot"></Text></Text> : <Text className="iconfont icon-bell-off-full"></Text> : null}
-                {!item.isSilence && item.count > 0 ? <Text className="dot count">{item.count}</Text> : null}
+                {item.isSilence ? (
+                  item.count > 0 ? (
+                    <Text className="bell">
+                      <Text className="iconfont icon-bell-off-full"></Text>
+                      <Text className="dot"></Text>
+                    </Text>
+                  ) : (
+                    <Text className="iconfont icon-bell-off-full"></Text>
+                  )
+                ) : null}
+                {!item.isSilence && item.count > 0 ? (
+                  <Text className="dot count">{item.count}</Text>
+                ) : null}
               </View>
             </View>
           </View>

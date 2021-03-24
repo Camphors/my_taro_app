@@ -1,22 +1,32 @@
 export default {
-  pages: ["pages/home/index", "pages/message/index", "pages/mine/index", "pages/threadDetails/index"],
+  pages: [
+    'pages/home/index',
+    'pages/message/index',
+    'pages/mine/index',
+    'pages/threadDetails/index',
+    'pages/message/details'
+  ],
   tabBar: {
     // custom: true,
-    list: [{
-      pagePath: "pages/home/index",
-      text: "首页"
-    },{
-      pagePath: "pages/message/index",
-      text: "消息"
-    },{
-      pagePath: "pages/mine/index",
-      text: "我的"
-    }]
+    list: [
+      {
+        pagePath: 'pages/home/index',
+        text: '首页'
+      },
+      {
+        pagePath: 'pages/message/index',
+        text: '消息'
+      },
+      {
+        pagePath: 'pages/mine/index',
+        text: '我的'
+      }
+    ]
   },
   window: {
-    backgroundTextStyle: "light",
-    navigationBarBackgroundColor: "#fff",
-    navigationBarTitleText: "WeChat",
-    navigationBarTextStyle: "black",
-  },
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: 'WeChat',
+    navigationBarTextStyle: 'black'
+  }
 };
